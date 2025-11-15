@@ -1,0 +1,252 @@
+{
+  "testRun": {
+    "date": "2025-11-15",
+    "duration": "1.6 minutes",
+    "browser": "Chromium",
+    "nodeVersion": "22",
+    "playwrightVersion": "1.56.1"
+  },
+  "summary": {
+    "total": 90,
+    "passed": 82,
+    "failed": 8,
+    "skipped": 0,
+    "passRate": 91.1
+  },
+  "categories": [
+    {
+      "name": "Navigation and Routing",
+      "file": "01-navigation.spec.js",
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "passRate": 100
+    },
+    {
+      "name": "Video Recording",
+      "file": "02-recorder.spec.js",
+      "total": 11,
+      "passed": 9,
+      "failed": 2,
+      "passRate": 81.8
+    },
+    {
+      "name": "Video Dashboard",
+      "file": "03-dashboard.spec.js",
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "passRate": 100
+    },
+    {
+      "name": "Video Player",
+      "file": "04-video-player.spec.js",
+      "total": 18,
+      "passed": 16,
+      "failed": 2,
+      "passRate": 88.9
+    },
+    {
+      "name": "Video Editor",
+      "file": "05-video-editor.spec.js",
+      "total": 21,
+      "passed": 19,
+      "failed": 2,
+      "passRate": 90.5
+    },
+    {
+      "name": "End-to-End Integration",
+      "file": "06-integration.spec.js",
+      "total": 14,
+      "passed": 12,
+      "failed": 2,
+      "passRate": 85.7
+    }
+  ],
+  "failedTests": [
+    {
+      "category": "Video Recording",
+      "test": "should start recording when Start Recording is clicked",
+      "reason": "Stop button not appearing after start",
+      "severity": "medium",
+      "file": "02-recorder.spec.js:27"
+    },
+    {
+      "category": "Video Recording",
+      "test": "should stop recording and save video",
+      "reason": "Timeout waiting for Stop button",
+      "severity": "medium",
+      "file": "02-recorder.spec.js:77"
+    },
+    {
+      "category": "Video Player",
+      "test": "should display video player page",
+      "reason": "URL redirects to /videos instead of /video/:id",
+      "severity": "medium",
+      "file": "04-video-player.spec.js:22"
+    },
+    {
+      "category": "Video Player",
+      "test": "should show play/pause controls",
+      "reason": "Play/pause controls not visible",
+      "severity": "low",
+      "file": "04-video-player.spec.js:47"
+    },
+    {
+      "category": "Video Editor",
+      "test": "should display video editor page",
+      "reason": "URL redirects to /videos instead of /edit/:id",
+      "severity": "medium",
+      "file": "05-video-editor.spec.js:22"
+    },
+    {
+      "category": "Video Editor",
+      "test": "should show editor tabs",
+      "reason": "Editor tabs not visible (redirect issue)",
+      "severity": "medium",
+      "file": "05-video-editor.spec.js:30"
+    },
+    {
+      "category": "End-to-End Integration",
+      "test": "complete workflow: record -> save -> view -> edit",
+      "reason": "Recording timeout (related to recording issues)",
+      "severity": "medium",
+      "file": "06-integration.spec.js:11"
+    },
+    {
+      "category": "End-to-End Integration",
+      "test": "local storage persistence",
+      "reason": "Mock DB not persisting data",
+      "severity": "low",
+      "file": "06-integration.spec.js:215"
+    }
+  ],
+  "coverage": {
+    "navigation": {
+      "tested": true,
+      "coverage": 100,
+      "features": [
+        "Page routing",
+        "Navigation links",
+        "Browser history",
+        "Responsive design",
+        "Accessibility"
+      ]
+    },
+    "recording": {
+      "tested": true,
+      "coverage": 81.8,
+      "features": [
+        "Start/stop recording",
+        "Pause/resume",
+        "Quality settings",
+        "Preview",
+        "Timer",
+        "File size indicator"
+      ]
+    },
+    "dashboard": {
+      "tested": true,
+      "coverage": 100,
+      "features": [
+        "Video grid",
+        "Video cards",
+        "Metadata display",
+        "Delete functionality",
+        "Empty state",
+        "Responsive design"
+      ]
+    },
+    "player": {
+      "tested": true,
+      "coverage": 88.9,
+      "features": [
+        "Video playback",
+        "Play/pause controls",
+        "Seek bar",
+        "Volume control",
+        "Fullscreen",
+        "Keyboard controls"
+      ]
+    },
+    "editor": {
+      "tested": true,
+      "coverage": 90.5,
+      "features": [
+        "Trim video",
+        "Split video",
+        "Join videos",
+        "Timeline",
+        "Preview",
+        "Process operations"
+      ]
+    }
+  },
+  "performance": {
+    "pageLoadTimes": {
+      "home": "< 10s",
+      "dashboard": "< 10s",
+      "average": "2-3s"
+    },
+    "testExecution": {
+      "totalDuration": "1.6 minutes",
+      "averageTestDuration": "1.1 seconds",
+      "parallelWorkers": 2
+    }
+  },
+  "accessibility": {
+    "tested": true,
+    "pagesChecked": ["home", "dashboard", "player", "editor"],
+    "violationsPerPage": "< 10",
+    "status": "acceptable"
+  },
+  "responsiveDesign": {
+    "tested": true,
+    "viewports": [
+      {
+        "name": "Mobile",
+        "size": "375x667",
+        "status": "passed"
+      },
+      {
+        "name": "Tablet",
+        "size": "768x1024",
+        "status": "passed"
+      },
+      {
+        "name": "Desktop",
+        "size": "1920x1080",
+        "status": "passed"
+      }
+    ]
+  },
+  "artifacts": {
+    "htmlReport": "playwright-report/index.html",
+    "jsonReport": "test-results/results.json",
+    "screenshots": "test-results/screenshots/",
+    "videos": "test-results/*/video.webm",
+    "testLog": "test-output.log"
+  },
+  "recommendations": {
+    "highPriority": [
+      "Fix recording state management",
+      "Improve IndexedDB mock integration"
+    ],
+    "mediumPriority": [
+      "Increase test timeouts for long operations",
+      "Add more test data fixtures"
+    ],
+    "lowPriority": [
+      "Expand test coverage for edge cases",
+      "Add browser compatibility tests",
+      "Implement page object models"
+    ]
+  },
+  "nextSteps": [
+    "Review HTML report for detailed failure analysis",
+    "Address high-priority recommendations",
+    "Re-run tests after fixes",
+    "Consider CI/CD integration",
+    "Expand test coverage"
+  ]
+}

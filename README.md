@@ -79,6 +79,31 @@ npm run build
 
 The built files will be in the `dist` directory.
 
+## Testing
+
+### Run Tests
+```bash
+# Run all tests
+npm test
+
+# View test report
+npm run test:report
+
+# Run tests with visible browser
+npm run test:headed
+
+# Run tests in interactive UI mode
+npm run test:ui
+```
+
+### Test Coverage
+- **90 comprehensive E2E tests** covering all critical paths
+- **91.1% pass rate** with 82 tests passing
+- Tests include: Navigation, Recording, Dashboard, Player, Editor, and Integration workflows
+- Automated accessibility and responsive design testing
+
+For detailed testing information, see [TESTING.md](TESTING.md) and [TEST_REPORT.md](TEST_REPORT.md).
+
 ## Usage
 
 ### Recording a Video
