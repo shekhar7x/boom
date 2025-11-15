@@ -4,21 +4,36 @@
   "description": "Boom - Advanced video recording and editing web application",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.0",
     "@ffmpeg/ffmpeg": "^0.12.10",
     "@ffmpeg/util": "^0.12.1",
-    "idb": "^8.0.0"
+    "idb": "^8.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.20.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@vitejs/plugin-react": "^4.2.1",
     "vite": "^5.0.8"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report test-reports/html-report",
+    "test:chromium": "playwright test --project=chromium",
+    "test:recording": "playwright test tests/01-recording.spec.js",
+    "test:quality": "playwright test tests/02-quality-settings.spec.js",
+    "test:playback": "playwright test tests/03-video-playback.spec.js",
+    "test:trim": "playwright test tests/04-video-trim.spec.js",
+    "test:split": "playwright test tests/05-video-split.spec.js",
+    "test:join": "playwright test tests/06-video-join.spec.js",
+    "test:dashboard": "playwright test tests/07-dashboard-management.spec.js",
+    "test:navigation": "playwright test tests/08-navigation.spec.js"
   },
   "browserslist": {
     "production": [
