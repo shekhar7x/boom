@@ -16,6 +16,12 @@ A powerful web application for recording, editing, and managing videos with adva
 - Real-time recording preview
 - Pause/Resume functionality
 - Recording timer and file size indicator
+- **NEW: Floating Recording Controls** ⭐
+  - Draggable popup button for easy access during recording
+  - Minimizable to tiny dot (12px) for minimal visibility in recordings
+  - Adjustable transparency (30-100% opacity)
+  - Quick access to pause/resume/stop controls
+  - Perfect for screen recordings where you want controls hidden
 
 ### ✂️ Video Editing
 - **Trim**: Cut videos to specific start and end points
@@ -88,7 +94,14 @@ The built files will be in the `dist` directory.
 3. Choose what to record (screen, webcam, audio)
 4. Click "Start Recording" and allow browser permissions
 5. Use pause/resume controls during recording
-6. Click "Stop & Save" when finished
+6. **NEW**: Use the floating control popup:
+   - Drag it to any position on screen
+   - Click to expand for full controls
+   - Click "Minimize" to reduce to tiny dot (barely visible)
+   - Adjust opacity slider for transparency
+7. Click "Stop & Save" when finished
+
+**Tip**: For minimal visibility in your recording, minimize the floating control to a tiny dot and set opacity to 30-50%.
 
 ### Editing Videos
 
@@ -153,6 +166,26 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 MIT License - feel free to use this project for personal or commercial purposes.
+
+## New Feature: Floating Recording Controls 🎯
+
+The floating recording controls provide a convenient, minimally-intrusive way to control your recordings:
+
+### Key Features:
+- **Draggable**: Position anywhere on screen
+- **Minimizable**: Reduce to tiny 12px dot for near-invisibility
+- **Adjustable Opacity**: 30-100% transparency control
+- **Quick Controls**: Pause, resume, and stop without leaving your recording
+- **Three Display Modes**:
+  - Collapsed (compact, ~140px)
+  - Expanded (full controls, ~180px)
+  - Minimized (tiny dot, 12px)
+
+### Documentation:
+- 📖 [Complete Feature Guide](./FLOATING_CONTROLS_GUIDE.md)
+- 🎨 [Visual Reference](./VISUAL_REFERENCE.md)
+- 📝 [Feature Summary](./FEATURE_SUMMARY.md)
+- 🧪 [How to Test](./HOW_TO_TEST.md)
 
 ## Acknowledgments
 

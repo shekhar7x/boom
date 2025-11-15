@@ -5,6 +5,7 @@ import storageService from '../../services/storageService';
 import { formatDuration, formatFileSize, generateVideoTitle } from '../../utils/formatUtils';
 import Button from '../Common/Button';
 import QualitySettings from './QualitySettings';
+import FloatingRecordingControls from './FloatingRecordingControls';
 import './Recorder.css';
 
 const Recorder = () => {
@@ -125,6 +126,16 @@ const Recorder = () => {
 
   return (
     <div className="recorder">
+      <FloatingRecordingControls
+        isRecording={isRecording}
+        isPaused={isPaused}
+        duration={duration}
+        onPause={handlePauseRecording}
+        onResume={handleResumeRecording}
+        onStop={handleStopRecording}
+        onCancel={handleCancelRecording}
+      />
+      
       <div className="recorder-container">
         {countdown > 0 && (
           <div className="recorder-countdown">
