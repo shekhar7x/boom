@@ -1,0 +1,221 @@
+.floating-recording-controls {
+  position: fixed;
+  z-index: 9999;
+  background: rgba(30, 30, 40, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  cursor: move;
+  user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.floating-recording-controls.dragging {
+  cursor: grabbing;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* Expanded View Styles */
+.floating-expanded-view {
+  padding: 12px 16px;
+  min-width: 250px;
+}
+
+.floating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recording-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.recording-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.recording-dot.pulsing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.minimize-button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.minimize-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.floating-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.info-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.info-value {
+  color: #fff;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.floating-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.floating-actions button {
+  flex: 1;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+.floating-actions svg {
+  flex-shrink: 0;
+}
+
+/* Minimized View Styles */
+.floating-recording-controls.minimized {
+  background: rgba(30, 30, 40, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: 24px;
+  padding: 0;
+  cursor: pointer;
+  min-width: auto;
+}
+
+.floating-minimized-view {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.recording-indicator-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recording-dot-mini {
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+}
+
+.recording-dot-mini.pulsing {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.recording-time-mini {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+.floating-recording-controls.minimized:hover {
+  background: rgba(30, 30, 40, 0.9);
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .floating-expanded-view {
+    min-width: 220px;
+    padding: 10px 12px;
+  }
+
+  .floating-actions {
+    flex-direction: column;
+  }
+
+  .floating-actions button {
+    width: 100%;
+  }
+}
+
+/* Prevent text selection during drag */
+.floating-recording-controls * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Ensure buttons are clickable */
+.floating-controls-button {
+  cursor: pointer !important;
+  pointer-events: auto;
+}
+
+/* Animation for appearance */
+.floating-recording-controls {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
